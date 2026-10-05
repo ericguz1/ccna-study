@@ -1,0 +1,873 @@
+[
+ {
+  "id": "nf-001",
+  "domain": "network-fundamentals",
+  "question": "Which OSI layer is responsible for logical addressing and routing?",
+  "choices": [
+   "Layer 2 (Data Link)",
+   "Layer 4 (Transport)",
+   "Layer 3 (Network)",
+   "Layer 5 (Session)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Layer 3 uses logical (IP) addresses and routers forward packets between networks. Layer 2 uses physical (MAC) addresses."
+ },
+ {
+  "id": "nf-002",
+  "domain": "network-fundamentals",
+  "question": "A switch forwards a unicast frame by looking at which field?",
+  "choices": [
+   "Destination IP address",
+   "Source IP address",
+   "Destination port number",
+   "Destination MAC address"
+  ],
+  "correctIndex": 3,
+  "explanation": "Switches build a MAC address table and forward on the destination MAC. Routers use destination IP."
+ },
+ {
+  "id": "nf-003",
+  "domain": "network-fundamentals",
+  "question": "Which cable type is used to connect two switches that do NOT support Auto-MDIX?",
+  "choices": [
+   "Straight-through",
+   "Crossover",
+   "Rollover",
+   "Coaxial"
+  ],
+  "correctIndex": 1,
+  "explanation": "Like devices (switch to switch, router to router, PC to router) need a crossover cable unless Auto-MDIX corrects the pinout. Rollover is for console access."
+ },
+ {
+  "id": "nf-004",
+  "domain": "network-fundamentals",
+  "question": "Which statement about fiber types is correct?",
+  "choices": [
+   "Multimode fiber supports longer distances than single-mode fiber",
+   "Single-mode fiber uses LEDs as its light source",
+   "Single-mode fiber supports longer distances than multimode fiber",
+   "Multimode fiber has a smaller core than single-mode fiber"
+  ],
+  "correctIndex": 2,
+  "explanation": "Single-mode has a very small core and typically uses lasers for long runs. Multimode has a larger core, uses LEDs or VCSELs, and is for shorter distances."
+ },
+ {
+  "id": "nf-005",
+  "domain": "network-fundamentals",
+  "question": "Which address is a private IPv4 address under RFC 1918?",
+  "choices": [
+   "172.32.0.5",
+   "192.169.1.1",
+   "11.0.0.1",
+   "172.31.45.10"
+  ],
+  "correctIndex": 3,
+  "explanation": "RFC 1918 ranges: 10.0.0.0/8, 172.16.0.0/12 (172.16.0.0 to 172.31.255.255), 192.168.0.0/16."
+ },
+ {
+  "id": "nf-006",
+  "domain": "network-fundamentals",
+  "question": "How many usable host addresses are in a /27 network?",
+  "choices": [
+   "32",
+   "62",
+   "14",
+   "30"
+  ],
+  "correctIndex": 3,
+  "explanation": "A /27 leaves 5 host bits: 2^5 = 32 addresses, minus network and broadcast = 30 usable."
+ },
+ {
+  "id": "nf-007",
+  "domain": "network-fundamentals",
+  "question": "Which subnet does the host 192.168.10.77/26 belong to?",
+  "choices": [
+   "192.168.10.64/26",
+   "192.168.10.0/26",
+   "192.168.10.128/26",
+   "192.168.10.32/26"
+  ],
+  "correctIndex": 0,
+  "explanation": "A /26 has a block size of 64 in the last octet: subnets start at 0, 64, 128, 192. 77 falls in the 64 to 127 block."
+ },
+ {
+  "id": "nf-008",
+  "domain": "network-fundamentals",
+  "question": "What is the shortest valid representation of 2001:0DB8:0000:0000:0000:0000:0000:0001?",
+  "choices": [
+   "2001:DB8:0:0::1",
+   "2001::DB8::1",
+   "2001:DB8::1",
+   "2001:DB8::0001"
+  ],
+  "correctIndex": 2,
+  "explanation": "Drop leading zeros in each group and replace one run of all-zero groups with ::. The :: can only be used once, so 2001::DB8::1 is invalid."
+ },
+ {
+  "id": "nf-009",
+  "domain": "network-fundamentals",
+  "question": "Which IPv6 prefix is used for multicast?",
+  "choices": [
+   "FF00::/8",
+   "FE80::/10",
+   "FC00::/7",
+   "2000::/3"
+  ],
+  "correctIndex": 0,
+  "explanation": "FF00::/8 is multicast. FE80::/10 is link-local, FC00::/7 is unique local, 2000::/3 is global unicast."
+ },
+ {
+  "id": "nf-010",
+  "domain": "network-fundamentals",
+  "question": "Which Layer 4 protocol is connectionless and does not retransmit lost segments?",
+  "choices": [
+   "TCP",
+   "IP",
+   "UDP",
+   "HTTP"
+  ],
+  "correctIndex": 2,
+  "explanation": "UDP has no handshake and no reliability. It is used where low latency beats reliability (VoIP, DNS queries, streaming)."
+ },
+ {
+  "id": "nf-011",
+  "domain": "network-fundamentals",
+  "question": "What is the correct order of the TCP three-way handshake?",
+  "choices": [
+   "SYN, ACK, SYN-ACK",
+   "ACK, SYN, SYN-ACK",
+   "SYN-ACK, SYN, ACK",
+   "SYN, SYN-ACK, ACK"
+  ],
+  "correctIndex": 3,
+  "explanation": "The client sends SYN, the server replies SYN-ACK, the client completes with ACK."
+ },
+ {
+  "id": "nf-012",
+  "domain": "network-fundamentals",
+  "question": "What is the main characteristic of a collapsed core (two-tier) campus design?",
+  "choices": [
+   "Access and distribution layers are combined into one layer",
+   "The core layer is removed and access switches connect directly to the WAN",
+   "Core and distribution layers are combined into one layer",
+   "Routers replace all Layer 2 switches"
+  ],
+  "correctIndex": 2,
+  "explanation": "A collapsed core merges the core and distribution layers. It is common in smaller campuses where a separate core is not justified."
+ },
+ {
+  "id": "nf-013",
+  "domain": "network-fundamentals",
+  "question": "Which hypervisor type runs directly on the physical server hardware?",
+  "choices": [
+   "Type 1",
+   "Type 2",
+   "Type 3",
+   "Container engine"
+  ],
+  "correctIndex": 0,
+  "explanation": "Type 1 (bare metal, e.g. ESXi) runs on hardware. Type 2 (e.g. VirtualBox) runs as an application on top of a host OS."
+ },
+ {
+  "id": "na-001",
+  "domain": "network-access",
+  "question": "What is the default native VLAN on a Cisco switch trunk?",
+  "choices": [
+   "VLAN 0",
+   "VLAN 99",
+   "VLAN 1002",
+   "VLAN 1"
+  ],
+  "correctIndex": 3,
+  "explanation": "The native VLAN carries untagged traffic and defaults to VLAN 1. Best practice is to change it to an unused VLAN on both ends."
+ },
+ {
+  "id": "na-002",
+  "domain": "network-access",
+  "question": "Which command statically configures an interface as an access port?",
+  "choices": [
+   "`switchport access trunk`",
+   "`switchport mode access`",
+   "`switchport mode dynamic desirable`",
+   "`switchport nonegotiate`"
+  ],
+  "correctIndex": 1,
+  "explanation": "`switchport mode access` forces access mode. `switchport nonegotiate` only stops DTP frames on a trunk."
+ },
+ {
+  "id": "na-003",
+  "domain": "network-access",
+  "question": "Which Cisco-proprietary protocol dynamically negotiates trunking between switches?",
+  "choices": [
+   "VTP",
+   "CDP",
+   "LACP",
+   "DTP"
+  ],
+  "correctIndex": 3,
+  "explanation": "DTP (Dynamic Trunking Protocol) negotiates trunk vs access. VTP distributes VLAN databases. LACP bundles links."
+ },
+ {
+  "id": "na-004",
+  "domain": "network-access",
+  "question": "How many bytes does an 802.1Q tag add to an Ethernet frame?",
+  "choices": [
+   "2",
+   "8",
+   "6",
+   "4"
+  ],
+  "correctIndex": 3,
+  "explanation": "The 802.1Q tag is 4 bytes: a 2-byte TPID (0x8100) and a 2-byte TCI containing priority, DEI and the 12-bit VLAN ID."
+ },
+ {
+  "id": "na-005",
+  "domain": "network-access",
+  "question": "What determines which switch becomes the STP root bridge?",
+  "choices": [
+   "Lowest Bridge ID (priority, then MAC address)",
+   "Highest MAC address",
+   "Highest port priority",
+   "Most connected ports"
+  ],
+  "correctIndex": 0,
+  "explanation": "The Bridge ID is priority + extended system ID (VLAN) + MAC. Lowest wins, with the MAC as the tiebreaker."
+ },
+ {
+  "id": "na-006",
+  "domain": "network-access",
+  "question": "What is the default STP bridge priority on a Cisco switch?",
+  "choices": [
+   "32768",
+   "4096",
+   "8192",
+   "61440"
+  ],
+  "correctIndex": 0,
+  "explanation": "Default priority is 32768. Priorities change in increments of 4096, and the VLAN ID is added as the extended system ID."
+ },
+ {
+  "id": "na-007",
+  "domain": "network-access",
+  "question": "Which RSTP port state combines the old STP blocking, listening and disabled states?",
+  "choices": [
+   "Discarding",
+   "Learning",
+   "Forwarding",
+   "Listening"
+  ],
+  "correctIndex": 0,
+  "explanation": "RSTP has three states: discarding, learning, forwarding."
+ },
+ {
+  "id": "na-008",
+  "domain": "network-access",
+  "question": "What does PortFast do on an access port?",
+  "choices": [
+   "Moves the port to forwarding immediately, skipping the normal STP delay",
+   "Disables STP on the entire switch",
+   "Bundles the port into an EtherChannel",
+   "Blocks all BPDUs from being sent"
+  ],
+  "correctIndex": 0,
+  "explanation": "PortFast is for end-host ports only. Pair it with BPDU Guard to err-disable the port if a BPDU arrives."
+ },
+ {
+  "id": "na-009",
+  "domain": "network-access",
+  "question": "Which LACP mode combination will NOT form an EtherChannel?",
+  "choices": [
+   "active and active",
+   "passive and passive",
+   "active and passive",
+   "on and on"
+  ],
+  "correctIndex": 1,
+  "explanation": "At least one side must initiate LACP (active). passive/passive never negotiates. Static `on` forms a channel with another `on`, but does not mix with LACP."
+ },
+ {
+  "id": "na-010",
+  "domain": "network-access",
+  "question": "Which statement about LLDP is correct?",
+  "choices": [
+   "It is an open IEEE 802.1AB standard for neighbor discovery",
+   "It is Cisco proprietary",
+   "It runs at Layer 3",
+   "It is enabled by default on all Cisco IOS devices"
+  ],
+  "correctIndex": 0,
+  "explanation": "LLDP is vendor neutral (IEEE 802.1AB). CDP is the Cisco-proprietary equivalent and is on by default on many Cisco devices. LLDP often must be enabled."
+ },
+ {
+  "id": "na-011",
+  "domain": "network-access",
+  "question": "Which protocol builds the tunnel between a lightweight AP and a wireless LAN controller?",
+  "choices": [
+   "GRE",
+   "CAPWAP",
+   "IPsec",
+   "VXLAN"
+  ],
+  "correctIndex": 1,
+  "explanation": "CAPWAP carries control and data traffic between lightweight APs and the WLC."
+ },
+ {
+  "id": "na-012",
+  "domain": "network-access",
+  "question": "Which 2.4 GHz channels do not overlap in the US?",
+  "choices": [
+   "1, 6 and 11",
+   "1, 5 and 9",
+   "2, 7 and 12",
+   "3, 6 and 9"
+  ],
+  "correctIndex": 0,
+  "explanation": "2.4 GHz channels are 22 MHz wide and spaced 5 MHz apart, so only 1, 6 and 11 are non-overlapping in the US."
+ },
+ {
+  "id": "na-013",
+  "domain": "network-access",
+  "question": "Which authentication method does WPA3-Personal use in place of the WPA2 pre-shared key exchange?",
+  "choices": [
+   "TKIP",
+   "WEP",
+   "EAP-TLS",
+   "SAE (Simultaneous Authentication of Equals)"
+  ],
+  "correctIndex": 3,
+  "explanation": "WPA3-Personal uses SAE, which resists offline dictionary attacks. EAP-TLS is an enterprise (802.1X) method."
+ },
+ {
+  "id": "ipc-001",
+  "domain": "ip-connectivity",
+  "question": "What is the default administrative distance of OSPF?",
+  "choices": [
+   "90",
+   "120",
+   "110",
+   "1"
+  ],
+  "correctIndex": 2,
+  "explanation": "Connected 0, static 1, EIGRP 90, OSPF 110, RIP 120."
+ },
+ {
+  "id": "ipc-002",
+  "domain": "ip-connectivity",
+  "question": "Which routing source has the lowest default administrative distance?",
+  "choices": [
+   "OSPF",
+   "Static route to a next-hop IP",
+   "RIP",
+   "External EIGRP (170)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Static routes have AD 1. Lower AD is more trusted. Directly connected is 0."
+ },
+ {
+  "id": "ipc-003",
+  "domain": "ip-connectivity",
+  "question": "What metric does RIP use?",
+  "choices": [
+   "Bandwidth and delay",
+   "Hop count",
+   "Cost based on bandwidth",
+   "Composite of load and reliability"
+  ],
+  "correctIndex": 1,
+  "explanation": "RIP uses hop count with a maximum of 15 (16 is unreachable)."
+ },
+ {
+  "id": "ipc-004",
+  "domain": "ip-connectivity",
+  "question": "A router has routes to 10.1.0.0/16 and 10.1.1.0/24. Which route is used for a packet to 10.1.1.5?",
+  "choices": [
+   "10.1.1.0/24",
+   "10.1.0.0/16",
+   "The one with the lowest metric",
+   "Both, load balanced"
+  ],
+  "correctIndex": 0,
+  "explanation": "The longest prefix match always wins first, before AD or metric."
+ },
+ {
+  "id": "ipc-005",
+  "domain": "ip-connectivity",
+  "question": "What are the default OSPF Hello and Dead timers on a broadcast network?",
+  "choices": [
+   "30 and 120 seconds",
+   "10 and 40 seconds",
+   "5 and 20 seconds",
+   "10 and 30 seconds"
+  ],
+  "correctIndex": 1,
+  "explanation": "Broadcast and point-to-point: 10/40. Non-broadcast and point-to-multipoint: 30/120. Dead is 4x Hello."
+ },
+ {
+  "id": "ipc-006",
+  "domain": "ip-connectivity",
+  "question": "If OSPF routers have the same priority, which wins the DR election?",
+  "choices": [
+   "Highest router ID",
+   "Lowest router ID",
+   "Highest MAC address",
+   "Lowest interface IP"
+  ],
+  "correctIndex": 0,
+  "explanation": "Highest priority wins, then highest router ID. A priority of 0 means the router can never become DR or BDR."
+ },
+ {
+  "id": "ipc-007",
+  "domain": "ip-connectivity",
+  "question": "Which is the correct order of OSPF router ID selection?",
+  "choices": [
+   "Highest physical IP, highest loopback IP, configured router-id",
+   "Lowest loopback IP, then lowest physical IP",
+   "MAC address of the lowest interface",
+   "Configured router-id, highest loopback IP, highest active physical IP"
+  ],
+  "correctIndex": 3,
+  "explanation": "A manually configured `router-id` wins, then the highest loopback IP, then the highest active physical interface IP."
+ },
+ {
+  "id": "ipc-008",
+  "domain": "ip-connectivity",
+  "question": "With the default reference bandwidth, what is the OSPF cost of a 10 Mbps link?",
+  "choices": [
+   "1",
+   "10",
+   "100",
+   "64"
+  ],
+  "correctIndex": 1,
+  "explanation": "Cost = reference bandwidth / link bandwidth = 100 Mbps / 10 Mbps = 10. FastEthernet and faster all cost 1 unless the reference bandwidth is raised."
+ },
+ {
+  "id": "ipc-009",
+  "domain": "ip-connectivity",
+  "question": "Which OSPF neighbor state means the LSDBs are fully synchronized?",
+  "choices": [
+   "2-Way",
+   "Exchange",
+   "Loading",
+   "Full"
+  ],
+  "correctIndex": 3,
+  "explanation": "States: Down, Init, 2-Way, ExStart, Exchange, Loading, Full. On a broadcast segment, DROTHERs stay at 2-Way with each other and go Full only with the DR and BDR."
+ },
+ {
+  "id": "ipc-010",
+  "domain": "ip-connectivity",
+  "question": "Which first-hop redundancy protocol is an open standard?",
+  "choices": [
+   "HSRP",
+   "VRRP",
+   "GLBP",
+   "VTP"
+  ],
+  "correctIndex": 1,
+  "explanation": "HSRP and GLBP are Cisco proprietary. VRRP is the open standard."
+ },
+ {
+  "id": "ipc-011",
+  "domain": "ip-connectivity",
+  "question": "Which command configures an IPv4 default static route?",
+  "choices": [
+   "`ip route 0.0.0.0 255.255.255.255 192.168.1.1`",
+   "`ip default-route 192.168.1.1`",
+   "`ip route 0.0.0.0 0.0.0.0 192.168.1.1`",
+   "`ip route 255.255.255.255 0.0.0.0 192.168.1.1`"
+  ],
+  "correctIndex": 2,
+  "explanation": "The default route is the all-zeros network with an all-zeros mask."
+ },
+ {
+  "id": "ipc-012",
+  "domain": "ip-connectivity",
+  "question": "How do you configure a floating static route as a backup?",
+  "choices": [
+   "Give it an administrative distance higher than the primary route",
+   "Give it an administrative distance of 0",
+   "Give it a longer prefix than the primary route",
+   "Configure it with the `permanent` keyword only"
+  ],
+  "correctIndex": 0,
+  "explanation": "A higher AD keeps the backup out of the routing table until the primary route disappears."
+ },
+ {
+  "id": "ipc-013",
+  "domain": "ip-connectivity",
+  "question": "What does the code `O IA` mean in `show ip route`?",
+  "choices": [
+   "An OSPF inter-area route",
+   "An OSPF external type 1 route",
+   "A route learned from an IPv6 neighbor",
+   "An administratively disabled OSPF route"
+  ],
+  "correctIndex": 0,
+  "explanation": "O = OSPF intra-area, O IA = inter-area, O E1/E2 = external type 1/2."
+ },
+ {
+  "id": "ipc-014",
+  "domain": "ip-connectivity",
+  "question": "Which subinterface command assigns the subinterface to VLAN 20 in a router-on-a-stick design?",
+  "choices": [
+   "`switchport access vlan 20`",
+   "`vlan 20 dot1q`",
+   "`encapsulation dot1q 20`",
+   "`ip vlan 20`"
+  ],
+  "correctIndex": 2,
+  "explanation": "Each subinterface needs `encapsulation dot1q <vlan>` and an IP address. The physical interface must be up with no IP."
+ },
+ {
+  "id": "ipc-015",
+  "domain": "ip-connectivity",
+  "question": "Which global command is required before a Cisco router will forward IPv6 packets?",
+  "choices": [
+   "`ipv6 enable`",
+   "`ipv6 unicast-routing`",
+   "`ipv6 routing`",
+   "`ip routing ipv6`"
+  ],
+  "correctIndex": 1,
+  "explanation": "Without `ipv6 unicast-routing` the router acts as an IPv6 host and will not forward or send router advertisements."
+ },
+ {
+  "id": "ips-001",
+  "domain": "ip-services",
+  "question": "Which NAT type maps many inside local addresses to a single inside global address using unique port numbers?",
+  "choices": [
+   "Static NAT",
+   "Dynamic NAT with a pool",
+   "Twice NAT",
+   "PAT (NAT overload)"
+  ],
+  "correctIndex": 3,
+  "explanation": "PAT tracks translations by port number so one public IP can serve many hosts."
+ },
+ {
+  "id": "ips-002",
+  "domain": "ip-services",
+  "question": "Which keyword enables PAT in `ip nat inside source list 1 interface g0/1 ...`?",
+  "choices": [
+   "overload",
+   "pool",
+   "static",
+   "extendable"
+  ],
+  "correctIndex": 0,
+  "explanation": "`overload` is what turns dynamic NAT into PAT."
+ },
+ {
+  "id": "ips-003",
+  "domain": "ip-services",
+  "question": "What is the correct order of the DHCP process?",
+  "choices": [
+   "Request, Offer, Discover, Acknowledge",
+   "Discover, Request, Offer, Acknowledge",
+   "Offer, Discover, Acknowledge, Request",
+   "Discover, Offer, Request, Acknowledge"
+  ],
+  "correctIndex": 3,
+  "explanation": "DORA: the client broadcasts Discover, the server sends an Offer, the client sends a Request, and the server replies with an Acknowledgment."
+ },
+ {
+  "id": "ips-004",
+  "domain": "ip-services",
+  "question": "Which command lets a router forward DHCP broadcasts to a server on another subnet?",
+  "choices": [
+   "`ip dhcp relay`",
+   "`ip forward-protocol`",
+   "`ip helper-address`",
+   "`ip dhcp pool`"
+  ],
+  "correctIndex": 2,
+  "explanation": "`ip helper-address <server-ip>` on the client-facing interface relays the broadcast as unicast."
+ },
+ {
+  "id": "ips-005",
+  "domain": "ip-services",
+  "question": "A client synchronizes to an NTP server that is stratum 2. What stratum does the client become?",
+  "choices": [
+   "2",
+   "3",
+   "1",
+   "0"
+  ],
+  "correctIndex": 1,
+  "explanation": "Each hop adds 1. Stratum 0 is the reference clock, and lower stratum numbers are closer to it."
+ },
+ {
+  "id": "ips-006",
+  "domain": "ip-services",
+  "question": "Which DNS record type maps a hostname to an IPv4 address?",
+  "choices": [
+   "AAAA",
+   "CNAME",
+   "MX",
+   "A"
+  ],
+  "correctIndex": 3,
+  "explanation": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail exchanger."
+ },
+ {
+  "id": "ips-007",
+  "domain": "ip-services",
+  "question": "Which SNMP message does an agent send to the manager without being asked?",
+  "choices": [
+   "Get",
+   "Set",
+   "Trap",
+   "GetNext"
+  ],
+  "correctIndex": 2,
+  "explanation": "Traps (and informs) are unsolicited notifications. Get, GetNext and Set are initiated by the manager."
+ },
+ {
+  "id": "ips-008",
+  "domain": "ip-services",
+  "question": "Which QoS tool drops or re-marks traffic that exceeds a configured rate?",
+  "choices": [
+   "Policing",
+   "Shaping",
+   "Queuing",
+   "Classification"
+  ],
+  "correctIndex": 0,
+  "explanation": "Policing discards or re-marks excess traffic. Shaping buffers and delays it instead."
+ },
+ {
+  "id": "ips-009",
+  "domain": "ip-services",
+  "question": "Which syslog severity level is the most severe?",
+  "choices": [
+   "7 (Debugging)",
+   "1 (Alerts)",
+   "0 (Emergencies)",
+   "3 (Errors)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Severity runs from 0 Emergencies to 7 Debugging. Lower number means more severe."
+ },
+ {
+  "id": "sec-001",
+  "domain": "security-fundamentals",
+  "question": "What is the default violation mode for switch port security?",
+  "choices": [
+   "Restrict",
+   "Protect",
+   "Shutdown",
+   "Discard"
+  ],
+  "correctIndex": 2,
+  "explanation": "Shutdown err-disables the port. Restrict drops frames and logs. Protect drops frames silently."
+ },
+ {
+  "id": "sec-002",
+  "domain": "security-fundamentals",
+  "question": "Which feature protects against rogue DHCP servers?",
+  "choices": [
+   "Dynamic ARP Inspection",
+   "Port security",
+   "BPDU Guard",
+   "DHCP snooping"
+  ],
+  "correctIndex": 3,
+  "explanation": "DHCP snooping marks ports as trusted or untrusted and only allows DHCP server replies on trusted ports."
+ },
+ {
+  "id": "sec-003",
+  "domain": "security-fundamentals",
+  "question": "Dynamic ARP Inspection validates ARP packets against which table?",
+  "choices": [
+   "MAC address table",
+   "DHCP snooping binding table",
+   "Routing table",
+   "CAM overflow table"
+  ],
+  "correctIndex": 1,
+  "explanation": "DAI compares IP to MAC bindings from the DHCP snooping binding table (or static ARP ACLs)."
+ },
+ {
+  "id": "sec-004",
+  "domain": "security-fundamentals",
+  "question": "Where should a standard ACL normally be placed?",
+  "choices": [
+   "As close to the source as possible",
+   "On the router's console line",
+   "As close to the destination as possible",
+   "Inbound on every interface"
+  ],
+  "correctIndex": 2,
+  "explanation": "Standard ACLs match only the source IP, so placing them near the source could block more than intended. Extended ACLs go near the source."
+ },
+ {
+  "id": "sec-005",
+  "domain": "security-fundamentals",
+  "question": "What rule is automatically added to the end of every ACL?",
+  "choices": [
+   "Implicit permit any",
+   "Implicit log",
+   "Implicit deny only for ICMP",
+   "Implicit deny any"
+  ],
+  "correctIndex": 3,
+  "explanation": "If no entry matches, the packet is dropped."
+ },
+ {
+  "id": "sec-006",
+  "domain": "security-fundamentals",
+  "question": "Which is a valid number for a standard numbered IPv4 ACL?",
+  "choices": [
+   "150",
+   "2100",
+   "75",
+   "101"
+  ],
+  "correctIndex": 2,
+  "explanation": "Standard: 1 to 99 and 1300 to 1999. Extended: 100 to 199 and 2000 to 2699."
+ },
+ {
+  "id": "sec-007",
+  "domain": "security-fundamentals",
+  "question": "In AAA, which component determines what a user is allowed to do after logging in?",
+  "choices": [
+   "Authentication",
+   "Authorization",
+   "Accounting",
+   "Auditing"
+  ],
+  "correctIndex": 1,
+  "explanation": "Authentication verifies who you are, authorization defines what you can do, accounting records what you did."
+ },
+ {
+  "id": "sec-008",
+  "domain": "security-fundamentals",
+  "question": "Which cipher does WPA2 use for encryption?",
+  "choices": [
+   "TKIP",
+   "AES-CCMP",
+   "RC4 only",
+   "3DES"
+  ],
+  "correctIndex": 1,
+  "explanation": "WPA2 uses AES-CCMP. TKIP was the WPA stopgap built on RC4."
+ },
+ {
+  "id": "sec-009",
+  "domain": "security-fundamentals",
+  "question": "Which command stores the privileged EXEC password in a hashed form?",
+  "choices": [
+   "`enable password`",
+   "`enable secret`",
+   "`service password-encryption` only",
+   "`line vty password`"
+  ],
+  "correctIndex": 1,
+  "explanation": "`enable secret` uses a hash. `enable password` is stored in plain text unless service password-encryption is on, which is only weak reversible encoding."
+ },
+ {
+  "id": "sec-010",
+  "domain": "security-fundamentals",
+  "question": "Which attack floods a switch with frames using random source MACs to fill its MAC table?",
+  "choices": [
+   "ARP poisoning",
+   "MAC flooding (CAM table overflow)",
+   "DHCP starvation",
+   "VLAN hopping"
+  ],
+  "correctIndex": 1,
+  "explanation": "A full MAC table makes the switch flood traffic like a hub. Port security limits this."
+ },
+ {
+  "id": "aut-001",
+  "domain": "automation-programmability",
+  "question": "Which HTTP method is normally used to create a new resource in a REST API?",
+  "choices": [
+   "GET",
+   "DELETE",
+   "POST",
+   "HEAD"
+  ],
+  "correctIndex": 2,
+  "explanation": "POST creates, GET reads, PUT/PATCH update, DELETE removes."
+ },
+ {
+  "id": "aut-002",
+  "domain": "automation-programmability",
+  "question": "Which data format uses curly braces and key-value pairs?",
+  "choices": [
+   "CSV",
+   "YAML",
+   "SNMP",
+   "JSON"
+  ],
+  "correctIndex": 3,
+  "explanation": "JSON objects are written as {\"key\": \"value\"}. YAML uses indentation and no braces for typical documents."
+ },
+ {
+  "id": "aut-003",
+  "domain": "automation-programmability",
+  "question": "In SDN, which interface lets the controller communicate with network devices?",
+  "choices": [
+   "Northbound API",
+   "Eastbound API",
+   "Management plane API",
+   "Southbound API"
+  ],
+  "correctIndex": 3,
+  "explanation": "Southbound (e.g. OpenFlow, NETCONF) goes to devices. Northbound (usually REST) goes to applications."
+ },
+ {
+  "id": "aut-004",
+  "domain": "automation-programmability",
+  "question": "Which configuration management tool is agentless and uses YAML playbooks?",
+  "choices": [
+   "Puppet",
+   "Chef",
+   "Ansible",
+   "SNMP"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ansible pushes changes over SSH and needs no agent. Puppet and Chef traditionally use agents and a pull model."
+ },
+ {
+  "id": "aut-005",
+  "domain": "automation-programmability",
+  "question": "In an SDN architecture, which plane is centralized in the controller?",
+  "choices": [
+   "Data plane",
+   "Control plane",
+   "Forwarding plane",
+   "Management plane only"
+  ],
+  "correctIndex": 1,
+  "explanation": "The controller makes forwarding decisions centrally while devices keep the data plane."
+ },
+ {
+  "id": "aut-006",
+  "domain": "automation-programmability",
+  "question": "What is YANG used for in network automation?",
+  "choices": [
+   "Encrypting NETCONF sessions",
+   "Discovering neighbors",
+   "Compressing configurations",
+   "Modeling the data used by NETCONF and RESTCONF"
+  ],
+  "correctIndex": 3,
+  "explanation": "YANG is a data modeling language that defines the structure of configuration and state data."
+ },
+ {
+  "id": "aut-007",
+  "domain": "automation-programmability",
+  "question": "Which HTTP status code indicates a successful GET request?",
+  "choices": [
+   "200",
+   "201",
+   "404",
+   "500"
+  ],
+  "correctIndex": 0,
+  "explanation": "200 OK. 201 Created is typical for POST, 404 means not found, 5xx are server errors."
+ }
+]
